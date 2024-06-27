@@ -1,0 +1,141 @@
+
+/* ------------------------------------------------------ GERAIS ------------------------------------------------------ */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+html,body,#root,.app{
+  height: 100%;
+}
+
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222327;
+  flex-flow: column wrap;
+}
+
+
+
+.container{
+  max-width: 550px;
+  max-height: 600px;
+  background-color: white;
+  padding: 2%;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid blueviolet;
+  margin: 2%;
+}
+
+.container2{
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  padding: 2%;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid blueviolet;
+  margin: 2%;
+}
+
+.container2 > h1{
+  padding-bottom: 20%;
+}
+
+.container2 > p{
+  font-size: 25px;
+}
+
+.container > h1{
+  margin-bottom: 30px;
+  font-size: 20px;
+  padding: 1%;
+}
+
+.container p{
+  width: 100%;
+  height: 80px;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 2.5% 0;
+}
+
+
+.active{
+  border: 3px solid black!important;
+}
+
+
+.button{
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  transition: 1s;
+}
+
+.button::before{
+  content: "";
+  width: 30px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: linear-gradient(to right, blue,black);
+  animation: girar 3s linear  infinite;
+  z-index: -1;
+}
+
+.button::after{
+  content: "";
+  background-color: white;
+  inset: 1.5px;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes girar {
+  100%{
+    transform:   translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+.resposta_certa{
+  border: 0!important;
+  background-color: green;
+  color: white;
+}
+
+.resposta_errada{
+  border: 0!important;
+  background-color: red;
+  color: white;
+}
+
+
+
+
+@media screen and (max-width:385px){
+    .container p{
+      font-size: 13px;
+    }
+}
